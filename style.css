@@ -1,1 +1,47 @@
-/* Some Comment*/
+/* Reset */
+@import './styles/reset.css';
+
+@font-face {
+  font-family: "Source Code Pro";
+  src: url('./fonts/Source_Code_Pro/SourceCodePro-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: "Source Code Pro";
+  src: url('./fonts/Source_Code_Pro/SourceCodePro-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+body {
+  font-family: 'Source Code Pro', sans-serif;
+}
+
+nav {
+  /* Layout */
+  display: flex;
+  justify-content: space-between;
+  /* Box Model */
+  
+  /* Typography */
+  /* Background & Visuals */
+  background-color: red;
+  /* Transitions & Animations */
+}
+
+/* Use rem cause its more adaptable, by default most browsers set this to 16px*/
+/* Small 640px */
+@media (min-width: 40rem) {}
+
+/* Medium 768px */
+@media (min-width: 48rem) {}
+
+/* Large 1024px */
+@media (min-width: 64rem) {}
+
+/* X-Large 1280px */
+@media (min-width: 80rem) {}
+
+/* 2X-Large 1536px */
+@media (min-width: 96rem) {}
