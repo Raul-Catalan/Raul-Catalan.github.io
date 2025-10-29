@@ -27,11 +27,11 @@ function addWorkExperience(work) {
   const companyDates = document.createElement("div");
   companyDates.setAttribute("class", "company-dates");
 
-  const company = document.createElement("h4");
+  const company = document.createElement("h3");
   company.setAttribute("class", "company");
   company.textContent = work.company;
 
-  const dates = document.createElement("h4");
+  const dates = document.createElement("h3");
   dates.setAttribute("class", "dates");
   dates.textContent = work.dates;
 
@@ -93,7 +93,7 @@ function addProject(project){
   const projectNameGithub = document.createElement("div");
   projectNameGithub.setAttribute("class", "projectName-github");
   
-  const projectName = document.createElement("h4");
+  const projectName = document.createElement("h3");
   projectName.setAttribute("class", "projectName");
   projectName.textContent = project.name + " - ";
   

@@ -1,21 +1,29 @@
 /* Reset */
-@import './styles/reset.css';
+@import "./styles/reset.css";
 
 @font-face {
   font-family: "Source Code Pro";
-  src: url('./fonts/Source_Code_Pro/SourceCodePro-VariableFont_wght.ttf') format('truetype');
+  src: url("./fonts/Source_Code_Pro/SourceCodePro-VariableFont_wght.ttf")
+    format("truetype");
   font-weight: 100 900;
 }
 
 @font-face {
   font-family: "Source Code Pro";
-  src: url('./fonts/Source_Code_Pro/SourceCodePro-Italic-VariableFont_wght.ttf') format('truetype');
+  src: url("./fonts/Source_Code_Pro/SourceCodePro-Italic-VariableFont_wght.ttf")
+    format("truetype");
   font-weight: 100 900;
   font-style: italic;
 }
 
+:root {
+  --primary-color: #e4dfdb;
+  --padding: 1rem;
+}
+
 body {
-  font-family: 'Source Code Pro', sans-serif;
+  font-family: "Source Code Pro", sans-serif;
+  background-color: var(--primary-color);
 }
 
 nav {
@@ -23,25 +31,84 @@ nav {
   display: flex;
   justify-content: space-between;
   /* Box Model */
-  
+  padding: var(--padding);
   /* Typography */
   /* Background & Visuals */
-  background-color: red;
+  /* Transitions & Animations */
+}
+
+main {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  /* Box Model */
+  /* Background & Visuals */
+  /* Transitions & Animations */
+}
+
+#left {
+  padding: 2.5rem 2.5rem;
+}
+
+/* Layout */
+/* Box Model */
+/* Typography */
+/* Background & Visuals */
+/* Transitions & Animations */
+#left h1 {
+  /* Layout */
+  /* Box Model */
+
+  /* Typography */
+  font-weight: 400;
+  word-spacing: -0.25em;
+  /* Background & Visuals */
+  /* Transitions & Animations */
+}
+
+#left h2 {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+#left #socials {
+  margin: 1.5rem 0;
+}
+
+#right {
+  /* Layout */
+  /* Box Model */
+  padding: 2.5rem 2.5rem;
+  /* Typography */
+  /* Background & Visuals */
+  /* Transitions & Animations */
+}
+
+#right h2 {
+  /* Layout */
+  /* Box Model */
+  /* Typography */
+  /* Background & Visuals */
   /* Transitions & Animations */
 }
 
 /* Use rem cause its more adaptable, by default most browsers set this to 16px*/
 /* Small 640px */
-@media (min-width: 40rem) {}
+@media (min-width: 40rem) {
+}
 
 /* Medium 768px */
-@media (min-width: 48rem) {}
+@media (min-width: 48rem) {
+}
 
 /* Large 1024px */
-@media (min-width: 64rem) {}
+@media (min-width: 64rem) {
+}
 
 /* X-Large 1280px */
-@media (min-width: 80rem) {}
+@media (min-width: 80rem) {
+}
 
 /* 2X-Large 1536px */
-@media (min-width: 96rem) {}
+@media (min-width: 96rem) {
+}
