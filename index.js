@@ -1,6 +1,7 @@
 import data from "./data.json" with { type: "json" };
 
-{/* <div id="exp_card">
+// Our Job HTMl structure for reference
+{/* <div id="exp-card">
   <div id="company-dates">
     <h4 id="company">Data Annotations</h4>
     <h4 id="dates">Jun. 2025 - Present</h4>
@@ -17,7 +18,7 @@ import data from "./data.json" with { type: "json" };
   </ul>
 </div> */}
 
-
+/* Render our html from the data.json object */
 function addWorkExperience(work) {
   // Experience Card
   const expCard = document.createElement("div");
@@ -27,11 +28,11 @@ function addWorkExperience(work) {
   const companyDates = document.createElement("div");
   companyDates.setAttribute("class", "company-dates");
 
-  const company = document.createElement("h3");
+  const company = document.createElement("p");
   company.setAttribute("class", "company");
   company.textContent = work.company;
 
-  const dates = document.createElement("h3");
+  const dates = document.createElement("p");
   dates.setAttribute("class", "dates");
   dates.textContent = work.dates;
 
@@ -70,6 +71,7 @@ function addWorkExperience(work) {
   experience.appendChild(expCard);
 }
 
+// HTML structure for reference to generate
 {/* <div id="project-card">
   <div id="name-github">
     <h4 id="name">Deep Work - </h4>
@@ -84,6 +86,8 @@ function addWorkExperience(work) {
     <li>Developed fine-grained evaluation criteria to model AI-generated responses, with a focus on clarity, robustness, and alignment with coding standards.</li>
   </ul>
 </div> */}
+
+// Render our Projects based on the data object
 function addProject(project){
   // Project Card
   const projectCard = document.createElement("div");
@@ -146,6 +150,7 @@ function addProject(project){
   projects.appendChild(projectCard);
 }
 
+// Render Work and Projects once the dom is loaded to avoid loading into elements not rendered yet.
 document.addEventListener("DOMContentLoaded", () => {
   // Work Experience
   data.work.forEach( (item, index) => {
@@ -158,4 +163,22 @@ document.addEventListener("DOMContentLoaded", () => {
     addProject(item);
     console.log(item);
   });
+});
+
+// Theme Loading and Switching
+const themeToggle = document.getElementById('theme-toggle');
+const htmlElement = document.documentElement;
+
+// Load previous theme if present
+const savedkTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  htmlElement.setAttribute('data-theme', savedTheme);
+}
+
+// EventListener for button click
+themeToggle.addEventListener('click', () => {
+  let currentTheme = htmlElement.getAttribute('data-theme');
+  let newTheme = (currentTheme === 'light') ? 'dark' : 'light'; // === checks type and value
+  htmlElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
 });

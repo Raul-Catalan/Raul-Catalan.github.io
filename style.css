@@ -1,6 +1,7 @@
 /* Reset */
 @import "./styles/reset.css";
 
+/* Import Source Code Pro from local storage */
 @font-face {
   font-family: "Source Code Pro";
   src: url("./fonts/Source_Code_Pro/SourceCodePro-VariableFont_wght.ttf")
@@ -8,6 +9,7 @@
   font-weight: 100 900;
 }
 
+/* Import Source Code Pro Italics from local storage */
 @font-face {
   font-family: "Source Code Pro";
   src: url("./fonts/Source_Code_Pro/SourceCodePro-Italic-VariableFont_wght.ttf")
@@ -16,80 +18,161 @@
   font-style: italic;
 }
 
+/* Default Light color scheme variables are here */
+/* Padding Variable could be set to the body but we will be grainular and set it to each element */
 :root {
-  --primary-color: #e4dfdb;
-  --padding: 1rem;
+  /* Box Model */
+  --padding: 1rem 2rem;
+  /* Typography */
+  --text-color: #333;
+  /* Background & Visuals */
+  --bg-color: #e4dfdb;
+  --icon-fill: 0;
+}
+
+/* Dark color scheme variables */
+/* Our 'data-theme' element is stored as a html attribute and will be manipulated by Javascript */
+[data-theme="dark"] {
+  /* Typography */
+  --text-color: #e4dfdb;
+  /* Background & Visuals */
+  --bg-color: #333;
+  --icon-fill: 1;
 }
 
 body {
+  /* Typography */
   font-family: "Source Code Pro", sans-serif;
-  background-color: var(--primary-color);
+  color: var(--text-color);
+  /* Background & Visuals */
+  background-color: var(--bg-color);
 }
 
 nav {
   /* Layout */
   display: flex;
   justify-content: space-between;
+  align-items: center;
   /* Box Model */
   padding: var(--padding);
-  /* Typography */
-  /* Background & Visuals */
-  /* Transitions & Animations */
 }
 
+#right_nav {
+  /* Layout */
+  display: flex;
+  justify-items: end;
+  align-items: center;
+}
+
+#right_nav > * {
+  padding: 0 0.5rem;
+}
+
+/* Base Values for variable material icon */
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' var(--icon-fill),
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+.theme-icon {
+  /* Transitions & Animations */
+  transition: font-variation-settings 0.3s;
+}
+
+/* Theme Hover animation */
+.theme-icon:hover {
+  font-variation-settings:
+  'FILL' var(--icon-fill),
+  'wght' 100,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+/* Content of our page excluding navigation and footer */
 main {
   /* Layout */
   display: flex;
   flex-direction: column;
   /* Box Model */
-  /* Background & Visuals */
-  /* Transitions & Animations */
+  padding: var(--padding)
 }
 
-#left {
-  padding: 2.5rem 2.5rem;
-}
-
-/* Layout */
-/* Box Model */
-/* Typography */
-/* Background & Visuals */
-/* Transitions & Animations */
+/* Title - Raul Catalan */
 #left h1 {
-  /* Layout */
-  /* Box Model */
-
   /* Typography */
-  font-weight: 400;
+  font-weight: 500;
   word-spacing: -0.25em;
-  /* Background & Visuals */
-  /* Transitions & Animations */
 }
 
+/* Secondary header - Aspiring job titles */
 #left h2 {
+  /* Box Model */
+  /* Typography */
   font-size: 1em;
   font-weight: 400;
 }
 
-#left #socials {
-  margin: 1.5rem 0;
+#socials {
+  margin: 2rem 0;
+}
+
+#socials a {
+  color: var(--text-color);
+}
+
+#socials a {
+  color: var(--text-color);
 }
 
 #right {
   /* Layout */
-  /* Box Model */
-  padding: 2.5rem 2.5rem;
-  /* Typography */
-  /* Background & Visuals */
-  /* Transitions & Animations */
+  display: flex;
+  flex-direction: column;
 }
 
 #right h2 {
-  /* Layout */
   /* Box Model */
+  padding: 1rem 0 0 0;
   /* Typography */
-  /* Background & Visuals */
-  /* Transitions & Animations */
+  font-weight: 400;
+  text-decoration-line: underline;
+  
+}
+
+/* <div id="exp-card">
+  <div id="company-dates">
+    <h4 id="company">Data Annotations</h4>
+    <h4 id="dates">Jun. 2025 - Present</h4>
+  </div>
+  <div id="position-location">
+    <p id="position">Data Annotator</p>
+    <p id="location">Remote</p>
+  </div>
+  <ul id="responsibilities">
+    <li>Evaluated and revised AI-generated responses to coding prompts, ensuring alignment with best practices, efficiency, and accuracy.</li>
+    <li>Improve and assess AI-generated code across multiple languages and their libraries and frameworks, such as Python, Java, JavaScript, Typescript, React, and Bash.</li>
+    <li>Reviewed and improved the AI-generated code across a broad range of tasks, including API development, algorithm questions, front-end implementation, and full-stack projects.</li>
+    <li>Developed fine-grained evaluation criteria to model AI-generated responses, with a focus on clarity, robustness, and alignment with coding standards.</li>
+  </ul>
+</div> */
+
+#exp-card {
+  display: flex;
+  flex-direction: column;
+} 
+
+.company-dates {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+.position-location {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Use rem cause its more adaptable, by default most browsers set this to 16px*/
