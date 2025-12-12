@@ -39,7 +39,8 @@
   "projects": [
     {
       "name": "Deep Work CLI",
-      "github": "github.com/Raul-Catalan/dw-cli",
+      "github": "https://github.com/Raul-Catalan/dw-cli",
+      "livelink": "https://raul-catalan.github.io",
       "technologies": [
         "Python",
         "SQLite",
@@ -52,11 +53,13 @@
         "Created a cli tool that can be forked and used per the user device",
         "This was built with the goal of creating a streak counter of deep work hours for users who frequently use the terminal",
         "This was built in Python and uses Typer and Textual framework heavily for creating cli tools."
-      ]
+      ],
+      "summary": "This portfolio was made to showcase my projects, it was written with raw HTML, CSS, and JavaScript. No Libraries were used when creating the site. Hosted by Github Pages."
     },
     {
-      "name": "Static Portfolio/Resume",
-      "github": "github.com/Raul-Catalan/Raul-Catalan.github.io",
+      "name": "Portfolio",
+      "github": "https://github.com/Raul-Catalan/Raul-Catalan.github.io",
+      "livelink": "",
       "technologies": [
         "HTML",
         "CSS",
@@ -68,7 +71,8 @@
       "highlights": [
         "Designed a minimalistic style portfolio to showcase who I am and some of my work.",
         "Written in HTML, CSS, and Javascript to create a static webpage to be hosted on Github Pages utilizing CI/CD best practices."
-      ]
+      ],
+      "summary": "This portfolio was made to showcase my projects, it was written with raw HTML, CSS, and JavaScript. No Libraries were used when creating the site. Hosted by Github Pages."
     }
   ]
 }

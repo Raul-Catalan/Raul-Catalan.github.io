@@ -22,7 +22,7 @@
 /* Padding Variable could be set to the body but we will be grainular and set it to each element */
 :root {
   /* Box Model */
-  --padding: 1rem 2rem;
+  --padding: 3.5rem;
   /* Typography */
   --text-color: #333;
   /* Background & Visuals */
@@ -50,7 +50,7 @@ body {
 
 nav {
   /* Layout */
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   /* Box Model */
@@ -113,79 +113,127 @@ main {
   /* Typography */
   font-size: 1em;
   font-weight: 400;
+  font-style: italic;
 }
 
-#socials {
-  margin: 2rem 0;
+#about {
+  /* Box Model */
+  padding: 2rem 0;
 }
 
-#socials a {
+a {
   color: var(--text-color);
 }
 
-#socials a {
-  color: var(--text-color);
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.popup .popuptext {
+  visibility: hidden;
+  width: 90px;
+  background-color: #555;
+  color:#fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 4px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -45px;
+
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.popup:hover .popuptext {
+  visibility: visible;
+  opacity: 1;
 }
 
 #right {
   /* Layout */
   display: flex;
   flex-direction: column;
+  /* Box Model */
+  padding: 3rem 0 0 0;
 }
 
 #right h2 {
-  /* Box Model */
-  padding: 1rem 0 0 0;
   /* Typography */
-  font-weight: 400;
+  font-weight: 500;
   text-decoration-line: underline;
   
 }
 
-/* <div id="exp-card">
-  <div id="company-dates">
-    <h4 id="company">Data Annotations</h4>
-    <h4 id="dates">Jun. 2025 - Present</h4>
-  </div>
-  <div id="position-location">
-    <p id="position">Data Annotator</p>
-    <p id="location">Remote</p>
-  </div>
-  <ul id="responsibilities">
-    <li>Evaluated and revised AI-generated responses to coding prompts, ensuring alignment with best practices, efficiency, and accuracy.</li>
-    <li>Improve and assess AI-generated code across multiple languages and their libraries and frameworks, such as Python, Java, JavaScript, Typescript, React, and Bash.</li>
-    <li>Reviewed and improved the AI-generated code across a broad range of tasks, including API development, algorithm questions, front-end implementation, and full-stack projects.</li>
-    <li>Developed fine-grained evaluation criteria to model AI-generated responses, with a focus on clarity, robustness, and alignment with coding standards.</li>
-  </ul>
-</div> */
-
-#exp-card {
-  display: flex;
-  flex-direction: column;
-} 
-
-.company-dates {
-  display: flex;
-  justify-content: space-between;
+.project-card h3 {
+  font-size: 1.10rem;
   font-weight: 500;
 }
 
-.position-location {
+.projectName-github {
   display: flex;
-  justify-content: space-between;
+  align-items: baseline;
 }
 
+.projectName-github > a {
+  padding: 1rem 10px 1rem;
+}
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tech > * {
+  /* Box Model */
+  margin: 4px;
+  padding: 0 6px;
+  /* Typography */
+  color: var(--bg-color);
+  /* Background & Visuals */
+  background-color: var(--text-color);
+  border-radius: 15px;
+}
+
+footer {
+  padding: var(--padding);
+  padding-top: 0;
+}
+
+footer > p {
+  padding: 1rem 0;
+}
 /* Use rem cause its more adaptable, by default most browsers set this to 16px*/
-/* Small 640px */
-@media (min-width: 40rem) {
-}
-
 /* Medium 768px */
 @media (min-width: 48rem) {
+  :root {
+    --padding: 5rem;
+  }
 }
 
 /* Large 1024px */
 @media (min-width: 64rem) {
+  :root {
+    --padding: 9rem;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  #left {
+    flex: 1;
+    padding: 0 2rem 0 0;
+  }
+  
+  #right {
+    flex: 1.25;
+    padding: 0;
+  }
 }
 
 /* X-Large 1280px */

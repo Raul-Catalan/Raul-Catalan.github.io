@@ -104,11 +104,28 @@ function addProject(project){
   const github = document.createElement("a");
   github.setAttribute("class", "github");
   github.setAttribute("href", project.github);
-  github.textContent = "Github Link";
+  github.setAttribute("target", "_blank");
+  github.textContent = "Github";
+
+  const live = document.createElement("a");
+  if (project.livelink != "") {
+    live.setAttribute("class", "live");
+    live.setAttribute("href", project.livelink);
+    live.setAttribute("target", "_blank");
+    live.textContent = "Live Link";
+  }
 
   projectNameGithub.appendChild(projectName);
   projectNameGithub.appendChild(github);
+  if (project.livelink != "") {
+    projectNameGithub.appendChild(live);
+  }
   projectCard.appendChild(projectNameGithub);
+  
+  const summary = document.createElement("p");
+  summary.setAttribute("class", "project-summary");
+  summary.textContent = project.summary;
+  projectCard.appendChild(summary);
   
   // Technologies
   const technologies = document.createElement("div");
@@ -123,15 +140,14 @@ function addProject(project){
   
   project.technologies.forEach( (item, index) => {
     const t = document.createElement("span");
+    t.setAttribute("class", "tech-item");
     t.textContent = item
 
-    if (index < project.technologies.length - 1) {
-      t.textContent += ", ";
-    }
+    // if (index < project.technologies.length - 1) { t.textContent += ", " };
     tech.appendChild(t);
   });
 
-  technologies.appendChild(techHeader);
+  // technologies.appendChild(techHeader);
   technologies.appendChild(tech);
   projectCard.appendChild(technologies);
   
@@ -144,7 +160,7 @@ function addProject(project){
     h.textContent = item;
     highlights.appendChild(h);
   });
-  projectCard.appendChild(highlights);
+  // projectCard.appendChild(highlights);
 
   const projects = document.getElementById("projects");
   projects.appendChild(projectCard);
@@ -153,10 +169,7 @@ function addProject(project){
 // Render Work and Projects once the dom is loaded to avoid loading into elements not rendered yet.
 document.addEventListener("DOMContentLoaded", () => {
   // Work Experience
-  data.work.forEach( (item, index) => {
-    addWorkExperience(item)
-    console.log(item);
-  });
+  //data.work.forEach( (item, index) => { addWorkExperience(item) });
   
   // Projects
   data.projects.forEach( (item, index) => {
@@ -170,7 +183,7 @@ const themeToggle = document.getElementById('theme-toggle');
 const htmlElement = document.documentElement;
 
 // Load previous theme if present
-const savedkTheme = localStorage.getItem('theme');
+const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
   htmlElement.setAttribute('data-theme', savedTheme);
 }
