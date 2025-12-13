@@ -40,7 +40,7 @@
     {
       "name": "Deep Work CLI",
       "github": "https://github.com/Raul-Catalan/dw-cli",
-      "livelink": "https://raul-catalan.github.io",
+      "livelink": "",
       "technologies": [
         "Python",
         "SQLite",
@@ -54,12 +54,12 @@
         "This was built with the goal of creating a streak counter of deep work hours for users who frequently use the terminal",
         "This was built in Python and uses Typer and Textual framework heavily for creating cli tools."
       ],
-      "summary": "This portfolio was made to showcase my projects, it was written with raw HTML, CSS, and JavaScript. No Libraries were used when creating the site. Hosted by Github Pages."
+      "summary": "Deep Work CLI is a Python-based command-line tool designed to help users track and maintain streaks of deep-work hours directly from their terminal. Built with Typer, Textual, and Rich, it offers an intuitive TUI experience and uses SQLite for lightweight, device-local data storage. The project emphasizes portability, simplicity, and productivity for developers who prefer working in the command line."
     },
     {
       "name": "Portfolio",
       "github": "https://github.com/Raul-Catalan/Raul-Catalan.github.io",
-      "livelink": "",
+      "livelink": "https://raul-catalan.github.io",
       "technologies": [
         "HTML",
         "CSS",
@@ -72,7 +72,7 @@
         "Designed a minimalistic style portfolio to showcase who I am and some of my work.",
         "Written in HTML, CSS, and Javascript to create a static webpage to be hosted on Github Pages utilizing CI/CD best practices."
       ],
-      "summary": "This portfolio was made to showcase my projects, it was written with raw HTML, CSS, and JavaScript. No Libraries were used when creating the site. Hosted by Github Pages."
+      "summary": "This portfolio was made to showcase my projects, it was written with raw HTML, CSS, and JavaScript. Minimal Libraries were used when creating the site, only used a Font Awesomes really great library to get the icons. This static site is hosted by Github Pages."
     }
   ]
 }
